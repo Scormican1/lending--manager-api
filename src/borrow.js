@@ -21,6 +21,6 @@ exports.newRecord = (req, res) => {
   // const record = req.body;
   db.collection("ItemsBorrowed")
     .add(req.body)
-    .then(doc => res.status(201).send(doc.id))
+    .then(doc => res.status(201).send({data: doc.id}))
     .catch(err => res.status(500).send(err));
 };
